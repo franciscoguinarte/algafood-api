@@ -1,4 +1,4 @@
-package com.algaworks.algafoodapi.jpa;
+package com.algaworks.algafoodapi.jpa.cozinha;
 
 import com.algaworks.algafoodapi.domain.model.Cozinha;
 import org.springframework.stereotype.Component;

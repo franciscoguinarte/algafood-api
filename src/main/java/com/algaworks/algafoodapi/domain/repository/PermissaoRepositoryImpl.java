@@ -24,6 +24,7 @@ public class PermissaoRepositoryImpl implements PermissaoRepository {
     }
 
     @Override
+    @Transactional
     public void excluir(Long id) {
         Permissao permissao = manager.find(Permissao.class,id);
         manager.remove(permissao);

@@ -30,6 +30,7 @@ public class FormaPagamentoImpl implements FormaPagamentoRepository {
     }
 
     @Override
+    @Transactional
     public void excluir(Long id) {
         FormaPagamento formaPagamento = manager.find(FormaPagamento.class,id);
         manager.remove(formaPagamento);

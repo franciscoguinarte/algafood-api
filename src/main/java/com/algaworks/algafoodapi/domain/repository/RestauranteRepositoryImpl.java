@@ -30,4 +30,11 @@ public class RestauranteRepositoryImpl implements RestauranteRepository {
     public Restaurante adicinar(Restaurante restaurante) {
         return manager.merge(restaurante);
     }
+
+    @Transactional
+    @Override
+    public void remover(Long id) {
+        Cozinha cozinha = manager.find(Cozinha.class,id);
+        manager.remove(cozinha);
+    }
 }
