@@ -9,7 +9,7 @@ import java.util.List;
 public interface CozinhaRepository {
 
     public List<Cozinha> listar();
-    public Cozinha adicionar(Cozinha cozinha);
     public Cozinha buscar(Long id);
+    public Cozinha adicionar(Cozinha cozinha);
     public void remover(Long id);
 }

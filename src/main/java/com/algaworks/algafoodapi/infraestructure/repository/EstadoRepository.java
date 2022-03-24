@@ -9,8 +9,8 @@ import java.util.List;
 public interface EstadoRepository {
 
     public List<Estado> listar();
-    public Estado adicionar(Estado estado);
     public Estado buscar(Long id);
+    public Estado adicionar(Estado estado);
     public void remover(Long id);
 
 }

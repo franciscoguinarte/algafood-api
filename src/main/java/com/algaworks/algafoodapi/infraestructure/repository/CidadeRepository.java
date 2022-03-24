@@ -9,8 +9,8 @@ import java.util.List;
 public interface CidadeRepository {
 
     public List<Cidade> listar();
-    public Cidade adicionar(Cidade cidade);
     public Cidade buscar(Long id);
+    public Cidade adicionar(Cidade cidade);
     public void remover(Long id);
 
 }

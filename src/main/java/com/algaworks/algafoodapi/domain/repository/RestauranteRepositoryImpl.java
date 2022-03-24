@@ -27,7 +27,7 @@ public class RestauranteRepositoryImpl implements RestauranteRepository {
     }
 
     @Transactional
-    public Restaurante adicinar(Restaurante restaurante) {
+    public Restaurante adicionar(Restaurante restaurante) {
         return manager.merge(restaurante);
     }
 
