@@ -5,6 +5,7 @@ import com.algaworks.algafoodapi.domain.model.Cozinha;
 import com.algaworks.algafoodapi.domain.model.Estado;
 import com.algaworks.algafoodapi.infraestructure.repository.CidadeRepository;
 import com.algaworks.algafoodapi.infraestructure.repository.CozinhaRepository;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,6 +38,10 @@ public class CidadeRepositoryImpl implements CidadeRepository {
     @Transactional
     public void remover(Long id) {
         Cidade cidade = manager.find(Cidade.class,id);
+        if( cidade == null){
+            throw new EmptyResultDataAccessException(1);
+        }
+        
         manager.remove(cidade);
     }
 }
