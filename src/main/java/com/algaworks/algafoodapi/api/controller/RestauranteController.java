@@ -1,22 +1,23 @@
 package com.algaworks.algafoodapi.api.controller;
 
 import com.algaworks.algafoodapi.domain.model.Restaurante;
-import com.algaworks.algafoodapi.domain.service.RestauranteService;
 import com.algaworks.algafoodapi.infraestructure.repository.RestauranteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/restaurantes")
+@RestController
+@RequestMapping("/restaurantes")
 public class RestauranteController {
 
     @Autowired
     private RestauranteRepository restauranteRepository;
-
-    @Autowired
-    private RestauranteService restauranteService;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> buscar(@PathVariable Long id) {
@@ -28,20 +29,8 @@ public class RestauranteController {
     }
 
     @GetMapping
-    public ResponseEntity<?> listar() {
+    public List<Restaurante> listar() {
         List<Restaurante> restaurantes = restauranteRepository.listar();
-
-        if(restaurantes.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(restaurantes);
+        return ResponseEntity.status(HttpStatus.OK).body(restaurantes).getBody();
     }
-
-//    @PostMapping
-//    public ResponseEntity<?> salvar(@RequestBody Restaurante restaurante) {
-//        restaurante = restauranteRepository.adicionar(restaurante);
-//        return ResponseEntity.ok(restaurante);
-//    }
-
-
 }
