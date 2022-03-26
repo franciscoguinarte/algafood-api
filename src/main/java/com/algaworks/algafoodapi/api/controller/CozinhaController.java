@@ -1,6 +1,7 @@
 package com.algaworks.algafoodapi.api.controller;
 
 import com.algaworks.algafoodapi.domain.model.Cozinha;
+import com.algaworks.algafoodapi.domain.service.CadastroCozinhaService;
 import com.algaworks.algafoodapi.infraestructure.repository.CozinhaRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class CozinhaController {
 
     @Autowired
     private CozinhaRepository cozinhaRepository;
+
+    @Autowired
+    private CadastroCozinhaService cadastroCozinha;
 
     @GetMapping
     public List<Cozinha> listar(){
@@ -37,7 +41,7 @@ public class CozinhaController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Cozinha adicionar(@RequestBody Cozinha cozinha){
-        return cozinhaRepository.adicionar(cozinha);
+        return cadastroCozinha.salvar(cozinha);
     }
 
     @PutMapping("/{id}")

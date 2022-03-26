@@ -21,12 +21,12 @@ public class IncluiRestaurante {
         Restaurante restaurante1 = new Restaurante();
         restaurante1.setNome("Abajur Restaurante");
         restaurante1.setTaxaFrete(BigDecimal.valueOf(123.444));
-        restauranteRepository.adicinar(restaurante1);
+        restauranteRepository.adicionar(restaurante1);
 
         Restaurante restaurante2 = new Restaurante();
         restaurante2.setNome("Restaurante do Quilao");
         restaurante2.setTaxaFrete(BigDecimal.valueOf(2));
-        restauranteRepository.adicinar(restaurante2);
+        restauranteRepository.adicionar(restaurante2);
 
 
     }
