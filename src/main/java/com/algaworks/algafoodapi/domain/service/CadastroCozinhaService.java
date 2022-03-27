@@ -9,8 +9,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityExistsException;
-
 @Service
 public class CadastroCozinhaService {
 
@@ -20,6 +18,7 @@ public class CadastroCozinhaService {
     public Cozinha salvar(Cozinha cozinha){
         return cozinhaRepository.adicionar(cozinha);
     }
+
     public Cozinha excluir(Long id) {
         try {
             cozinhaRepository.remover(id);
