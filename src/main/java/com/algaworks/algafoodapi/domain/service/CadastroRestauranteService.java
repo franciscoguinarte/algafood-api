@@ -44,4 +44,6 @@ public class CadastroRestauranteService {
                     String.format("Não é possível excluir. Restaurante em uso: Cozinha -> %d", id));
         }
     }
+
+
 }

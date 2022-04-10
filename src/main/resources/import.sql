@@ -21,4 +21,3 @@ insert into estado (id,nome) values (2,'Amazonas');
 -- CIDADE
 insert into cidade (nome,estado_id) values ('Bali',1);
 insert into cidade (nome,estado_id) values ('Manaus',2);
-
